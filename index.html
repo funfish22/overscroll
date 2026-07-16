@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>美化範例</title>
+    <style>
+        :root{--card-bg: rgba(255,255,255,0.07);--accent:#7c5cff;--muted:rgba(255,255,255,0.85)}
+        *{box-sizing:border-box}
+        html,body{height:500dvh;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans TC', sans-serif;background:linear-gradient(180deg,#071029 0%, #021024 100%);color:#eaf4ff}
+        .menu{position:fixed;left:24px;top:24px;width:min(420px,80vw);height:calc(100dvh - 48px);background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:14px;padding:14px;box-shadow:0 12px 40px rgba(2,6,23,0.6);backdrop-filter:blur(6px);display:flex;flex-direction:column;overflow:hidden}
+        .header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+        .title{font-weight:700;font-size:1.05rem;color:var(--muted)}
+        .search{flex:1;padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;outline:none}
+        .list{flex:1;overflow:auto;padding:8px;margin:0;list-style:none}
+        .list li{height:56px;display:flex;align-items:center;padding:0 12px;margin-bottom:8px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));transition:transform .12s ease,box-shadow .12s ease}
+        .list li:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(2,6,23,0.5)}
+        .list li:focus{outline:2px solid rgba(124,92,255,0.22)}
+        .item-text{flex:1}
+        .footer{font-size:12px;color:rgba(255,255,255,0.55);text-align:center;padding-top:8px}
+        .menu.overscroll-behavior{overscroll-behavior:none}
+        /* ::-webkit-scrollbar{width:10px;height:10px}
+        ::-webkit-scrollbar-track{background:transparent}
+        ::-webkit-scrollbar-thumb{background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));border-radius:10px;border:2px solid transparent;background-clip:padding-box} */
+        @media (max-width:480px){.menu{left:12px;top:12px;width:calc(100vw - 24px);height:calc(100dvh - 24px)}}
+    </style>
+</head>
+<body>
+    <button onclick="toggleMenu()">切換</button>
+    <span class="text">關閉 Overscroll 行為。</span>
+    <div class="menu" role="navigation" aria-label="選單">
+        <ul class="list" aria-live="polite">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('overscroll-behavior');
+            const text = document.querySelector('.text');
+            if (menu.classList.contains('overscroll-behavior')) {
+                text.textContent = '開啟 Overscroll 行為。';
+            } else {
+                text.textContent = '關閉 Overscroll 行為。';
+            }
+        }
+    </script>
+</body>
+</html>
